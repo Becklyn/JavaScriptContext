@@ -1,0 +1,32 @@
+{
+    "name": "becklyn/javascript-context",
+    "type": "symfony-bundle",
+    "description": "A way to send data from PHP to JavaScript.",
+    "homepage": "https://github.com/Becklyn/javascript-context",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Becklyn Studios",
+            "homepage": "http://becklyn.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "becklyn/php-cs": "^1.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Becklyn\\JavascriptContext\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Becklyn\\JavascriptContext\\": "tests/"
+        }
+    }
+}
