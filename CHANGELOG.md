@@ -1,3 +1,9 @@
+1.0.3
+=====
+
+*   Fixed invalid service class case in `services.yaml`.
+
+
 1.0.2
 =====
 

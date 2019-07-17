@@ -3,5 +3,5 @@ services:
         autoconfigure: true
         autowire: true
 
-    Becklyn\JavascriptContext\:
+    Becklyn\JavaScriptContext\:
         resource: '../../*'
