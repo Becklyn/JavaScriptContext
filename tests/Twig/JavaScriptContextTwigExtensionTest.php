@@ -28,7 +28,7 @@ class JavaScriptContextTwigExtensionTest extends TestCase
         $extension = new JavaScriptContextTwigExtension(new JavaScriptContext(["<b>" => 2]));
         self::assertSame(
             '<script id="other-id" class="_javascript-context _data-container" type="application/json">{"&lt;b&gt;":2}</script>',
-            $extension->renderDataContainer("other-id")
+            $extension->renderDataContainer(null, "other-id")
         );
     }
 

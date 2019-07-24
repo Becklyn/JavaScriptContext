@@ -5,3 +5,6 @@ services:
 
     Becklyn\JavaScriptContext\:
         resource: '../../*'
+
+    Becklyn\JavaScriptContext\Context\JavaScriptContext:
+        $providers: !tagged javascript_context.provider

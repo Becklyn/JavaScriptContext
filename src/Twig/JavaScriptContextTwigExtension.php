@@ -26,12 +26,12 @@ class JavaScriptContextTwigExtension extends AbstractExtension
     /**
      * @return string
      */
-    public function renderDataContainer (string $id = "_javascript-context") : string
+    public function renderDataContainer (?string $domain = null, string $id = "_javascript-context") : string
     {
         return \sprintf(
             '<script id="%s" class="_javascript-context _data-container" type="application/json">%s</script>',
             \htmlspecialchars($id, \ENT_QUOTES),
-            \htmlspecialchars(\json_encode($this->context->get()), \ENT_NOQUOTES)
+            \htmlspecialchars(\json_encode($this->context->get($domain)), \ENT_NOQUOTES)
         );
     }
 

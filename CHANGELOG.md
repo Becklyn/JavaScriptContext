@@ -1,3 +1,10 @@
+2.0.0
+=====
+
+*   Added `ContextProviderInterfaces`.
+*   Added `$domain` as the first argument in the Twig function `javascript_context`.
+
+
 1.0.3
 =====
 
