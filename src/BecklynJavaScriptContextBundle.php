@@ -2,6 +2,7 @@
 
 namespace Becklyn\JavaScriptContext;
 
+use Becklyn\JavaScriptContext\Provider\ContextProviderInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -38,5 +39,15 @@ class BecklynJavaScriptContextBundle extends Bundle
                 return "becklyn_javascript_context";
             }
         };
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function build (ContainerBuilder $container) : void
+    {
+        $container->registerForAutoconfiguration(ContextProviderInterface::class)
+            ->addTag("javascript_context.provider");
     }
 }

@@ -32,7 +32,7 @@ The container will have the `_javascript-context _data-container` classes and th
 To modify the ID, pass the new ID to the function: 
 
 ```twig
-{{- javascript_context("some_other_id") -}}
+{{- javascript_context(null, "some_other_id") -}}
 ``` 
 
 Fetching the Data
@@ -50,3 +50,41 @@ let data = JSON.parse(
 ```
 
 In the JSON output, only the following chars are HTML escaped: `<`, `>` and `&`.
+
+
+
+Context Providers
+-----------------
+
+If some data has to always be passed to the template, then it is convenient to just register a context provider.
+
+```php
+use Becklyn\JavaScriptContext\Context\JavaScriptContext;
+use Becklyn\JavaScriptContext\Provider\ContextProviderInterface;
+
+class MyProvider implements ContextProviderInterface
+{
+    public function provideJavaScriptContext (JavaScriptContext $context, ?string $domain) : void
+    {
+        $context->set("some", "value");
+    }
+}
+```
+
+Each provider receives the context to modify, as well as optionally a domain. This is just a `string` key with which
+the providers can decide whether they want to attach data or not.
+
+For example to separate the context into `app` and `backend` you can just register all providers and then in your
+template include it like this:
+
+```twig
+{# in your frontend #}
+{{- javascript_context("app") -}}
+
+
+{# and in the backend do #}
+{{- javascript_context("backend") -}
+```
+
+You must add the tag `javascript_context.provider` to your service.
+If you use autoconfiguration, the tag is added automatically.
