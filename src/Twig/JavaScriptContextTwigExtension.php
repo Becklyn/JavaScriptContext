@@ -15,7 +15,6 @@ class JavaScriptContextTwigExtension extends AbstractExtension
 
 
     /**
-     * @param JavaScriptContext $context
      */
     public function __construct (JavaScriptContext $context)
     {
@@ -24,7 +23,6 @@ class JavaScriptContextTwigExtension extends AbstractExtension
 
 
     /**
-     * @return string
      */
     public function renderDataContainer (?string $domain = null, string $id = "_javascript-context") : string
     {

@@ -26,8 +26,6 @@ class JavaScriptContext
 
 
     /**
-     * @param array    $initial
-     * @param iterable $providers
      */
     public function __construct (array $initial = [], iterable $providers = [])
     {
@@ -37,8 +35,7 @@ class JavaScriptContext
 
 
     /**
-     * @param string $key
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return JavaScriptContext
      */
@@ -59,8 +56,6 @@ class JavaScriptContext
      *
      * @param string|null $domain an optional domain, with which the providers can decide whether they want to attach
      *                            data or not
-     *
-     * @return array
      */
     public function get (?string $domain = null) : array
     {
